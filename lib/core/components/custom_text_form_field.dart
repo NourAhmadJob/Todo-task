@@ -22,10 +22,6 @@ class CustomTextFormField extends StatelessWidget {
       validator: validator,
       decoration: InputDecoration(
           hintText: hint,
-          focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(AppSize.s12),
-              borderSide: const BorderSide(color: AppColor.primary)
-          ),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(AppSize.s12))
       ),
     );

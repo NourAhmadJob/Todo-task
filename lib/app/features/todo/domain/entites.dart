@@ -1,7 +1,6 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:equatable/equatable.dart';
-import 'package:todotask/core/enum/todo_state.dart';
 
 class Todo extends Equatable {
   String? id;

@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
 import 'package:todotask/app/features/todo/data/datasource.dart';
-import 'package:todotask/app/features/todo/domain/entites.dart';
-import 'package:todotask/app/features/todo/presentation/controller/todo_bloc.dart';
-import 'package:todotask/app/features/todo/presentation/controller/todo_event.dart';
 import 'package:todotask/app/features/todo/presentation/pages/home.dart';
 import 'package:todotask/core/services_locator/di.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;

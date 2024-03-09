@@ -1,7 +1,4 @@
-// part of 'todo_bloc.dart';
-//
-// @immutable
-// abstract class TodoEvent {}
+
 
 import 'package:equatable/equatable.dart';
 import 'package:todotask/app/features/todo/domain/entites.dart';
@@ -48,19 +45,4 @@ class GetTodoEvent extends TodoEvents {
 
   @override
   List<Object?> get props => [stringIdParameter];
-}
-
-class MakeTodoCompleteOrPending extends TodoEvents {
-  final StringIdParameter stringIdParameter;
-  final bool isComplete;
-  MakeTodoCompleteOrPending({required this.stringIdParameter , required this.isComplete});
-  @override
-  // TODO: implement props
-  List<Object?> get props => [stringIdParameter , isComplete];
-}
-
-class GetEventList{
-   static List<String> list = [];
-
-  GetEventList();
 }

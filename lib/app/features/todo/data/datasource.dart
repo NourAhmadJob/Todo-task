@@ -1,6 +1,5 @@
 import 'package:hive/hive.dart';
 import 'package:todotask/app/features/todo/domain/entites.dart';
-import 'package:todotask/core/enum/todo_state.dart';
 import 'package:uuid/uuid.dart';
 
 abstract class BaseDataSource {
@@ -22,7 +21,7 @@ class LocalDataSource extends BaseDataSource {
 
   @override
   Future<void> addTodo(Todo todo) async {
-    final id = Uuid().v4();
+    final id = const Uuid().v4();
     return await todoBox.put(id, {
       'title': todo.title,
       'stateOfTodo' : todo.stateOfTodo,

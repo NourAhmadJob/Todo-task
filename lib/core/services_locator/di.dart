@@ -1,8 +1,5 @@
 import 'package:get_it/get_it.dart';
-import 'package:hive/hive.dart';
-import 'package:todotask/app/features/todo/data/datasource.dart';
 import 'package:todotask/app/features/todo/data/repository_imp.dart';
-import 'package:todotask/app/features/todo/domain/entites.dart';
 import 'package:todotask/app/features/todo/domain/repository.dart';
 import 'package:todotask/app/features/todo/domain/usecase/add_todo_usecase.dart';
 import 'package:todotask/app/features/todo/domain/usecase/delete_todo_usecase.dart';

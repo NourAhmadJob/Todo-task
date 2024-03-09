@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todotask/app/features/todo/domain/entites.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todotask/app/features/todo/presentation/components/todos_list_components.dart';
-import 'package:todotask/app/features/todo/presentation/controller/todo_bloc.dart';
-import 'package:todotask/app/features/todo/presentation/controller/todo_event.dart';
-import 'package:todotask/app/features/todo/presentation/controller/todo_state.dart';
 import 'package:todotask/app/features/todo/presentation/pages/add_update_todo_list.dart';
 import 'package:todotask/core/components/custom_floating_action_button.dart';
 import 'package:todotask/core/components/custom_text.dart';
-import 'package:todotask/core/services_locator/di.dart';
 import 'package:todotask/core/utils/app_color.dart';
 import 'package:todotask/core/utils/app_size.dart';
 import 'package:todotask/core/utils/next_back_pages.dart';
@@ -24,7 +19,7 @@ class Home extends StatelessWidget {
         backgroundColor: AppColor.primary,
         title: CustomText(
           text: 'All Todo List',
-          size: AppSize.s20,
+          size: AppSize.s20.sp,
           fontWeight: FontWeight.w800,
         ),
       ),

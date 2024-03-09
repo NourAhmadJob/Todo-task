@@ -8,7 +8,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:todotask/app/features/todo/domain/entites.dart';
 import 'package:todotask/core/enum/process_state.dart';
-import 'package:todotask/core/enum/todo_state.dart';
 
 class TodoStates extends Equatable {
   // add todo
@@ -33,7 +32,6 @@ class TodoStates extends Equatable {
   final String deleteTodoMessage;
 
   // states
-  final StateOfTodo stateOfTodo;
   final List<String> idOfStateTodo;
 
   const TodoStates({
@@ -49,7 +47,6 @@ class TodoStates extends Equatable {
     this.getTodoMessage = '',
     this.getTodoState = ProcessState.initial,
 
-    this.stateOfTodo = StateOfTodo.initial,
     this.idOfStateTodo = const [],
   });
 
@@ -65,7 +62,6 @@ class TodoStates extends Equatable {
       String? updateTodoMessage,
       ProcessState? getTodoState,
       String? getTodoMessage,
-      StateOfTodo? stateOfTodo,
         List<String>? idOfStateTodo,
       }) {
     return TodoStates(
@@ -80,7 +76,6 @@ class TodoStates extends Equatable {
       updateTodoState: updateTodoState ?? this.updateTodoState,
       getTodoState: getTodoState ?? this.getTodoState,
       getTodoMessage: getTodoMessage ?? this.getTodoMessage,
-      stateOfTodo: stateOfTodo ?? this.stateOfTodo,
       idOfStateTodo: idOfStateTodo ?? this.idOfStateTodo
     );
   }

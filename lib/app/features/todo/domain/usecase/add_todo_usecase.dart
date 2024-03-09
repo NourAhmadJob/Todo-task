@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:todotask/app/features/todo/domain/entites.dart';
 import 'package:todotask/core/base/base_usecase.dart';
-import 'package:todotask/core/enum/todo_state.dart';
 import 'package:todotask/core/error/failure.dart';
 import '../repository.dart';
 

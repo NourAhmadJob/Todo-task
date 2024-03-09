@@ -1,92 +1,3 @@
-// // import 'dart:async';
-// //
-// // import 'package:bloc/bloc.dart';
-// // import 'package:meta/meta.dart';
-// //
-// // part 'todo_event.dart';
-// // part 'todo_state.dart';
-// //
-// // class TodoBloc extends Bloc<TodoEvent, TodoState> {
-// //   TodoBloc() : super(TodoInitial()) {
-// //     on<TodoEvent>((event, emit) {
-// //
-// //       // TODO: implement event handler
-// //     });
-// //   }
-// // }
-// // ui/bloc/todo_bloc.dart
-//
-// import 'dart:async';
-// import 'package:your_app_name/domain/entities/todo.dart';
-// import 'package:your_app_name/domain/usecases/add_todo_usecase.dart';
-// import 'package:your_app_name/domain/usecases/delete_todo_usecase.dart';
-// import 'package:your_app_name/domain/usecases/get_all_todos_usecase.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
-//
-// // Define events
-// abstract class TodoEvent {}
-//
-// class LoadTodos extends TodoEvent {}
-//
-// class AddTodo extends TodoEvent {
-//   final Todo todo;
-//
-//   AddTodo(this.todo);
-// }
-//
-// class DeleteTodo extends TodoEvent {
-//   final String id;
-//
-//   DeleteTodo(this.id);
-// }
-//
-// // Define state
-// class TodoState {
-//   final List<Todo> todos;
-//
-//   TodoState(this.todos);
-// }
-//
-// // Define BLoC
-// class TodoBloc extends Bloc<TodoEvent, TodoState> {
-//   final GetAllTodosUseCase getAllTodosUseCase;
-//   final AddTodoUseCase addTodoUseCase;
-//   final DeleteTodoUseCase deleteTodoUseCase;
-//
-//   TodoBloc(
-//       {required this.getAllTodosUseCase,
-//         required this.addTodoUseCase,
-//         required this.deleteTodoUseCase})
-//       : super(TodoState([]));
-//
-//   @override
-//   Stream<TodoState> mapEventToState(TodoEvent event) async* {
-//     if (event is LoadTodos) {
-//       yield* _mapLoadTodosToState();
-//     } else if (event is AddTodo) {
-//       yield* _mapAddTodoToState(event.todo);
-//     } else if (event is DeleteTodo) {
-//       yield* _mapDeleteTodoToState(event.id);
-//     }
-//   }
-//
-//   Stream<TodoState> _mapLoadTodosToState() async* {
-//     final todos = await getAllTodosUseCase.execute();
-//     yield TodoState(todos);
-//   }
-//
-//   Stream<TodoState> _mapAddTodoToState(Todo todo) async* {
-//     await addTodoUseCase.execute(todo);
-//     add(LoadTodos()); // Reload todos after adding a new one
-//   }
-//
-//   Stream<TodoState> _mapDeleteTodoToState(String id) async* {
-//     await deleteTodoUseCase.execute(id);
-//     add(LoadTodos()); // Reload todos after deleting one
-//   }
-// }
-//
-
 import 'dart:async';
 
 import 'package:todotask/app/features/todo/domain/entites.dart';
@@ -100,9 +11,6 @@ import 'package:todotask/app/features/todo/presentation/controller/todo_state.da
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todotask/core/constance/strings.dart';
 import 'package:todotask/core/enum/process_state.dart';
-import 'package:todotask/core/enum/todo_state.dart';
-import 'package:todotask/core/services_locator/di.dart';
-import 'package:uuid/uuid.dart';
 
 class TodoBloc extends Bloc<TodoEvents, TodoStates> {
   final AddTodoUseCase addTodoUseCase;
@@ -123,7 +31,6 @@ class TodoBloc extends Bloc<TodoEvents, TodoStates> {
     on<DeleteTodoEvent>(_deleteTodoFunction);
     on<UpdateTodoEvent>(_updateTodoFunction);
     on<GetTodoEvent>(_getTodoFunction);
-    on<MakeTodoCompleteOrPending>(_makeTodoCompleteOrPendingFunction);
   }
 
   FutureOr<void> _addTodoFunction(
@@ -151,7 +58,6 @@ class TodoBloc extends Bloc<TodoEvents, TodoStates> {
         ),
       ),
     );
-    print(state.addTodoState);
   }
 
   FutureOr<void> _getTodosFunction(
@@ -178,7 +84,6 @@ class TodoBloc extends Bloc<TodoEvents, TodoStates> {
         ),
       ),
     );
-    print(state.getTodosState);
   }
 
   FutureOr<void> _deleteTodoFunction(
@@ -246,20 +151,10 @@ class TodoBloc extends Bloc<TodoEvents, TodoStates> {
             ), (right) {
       emit(
         state.copyWith(
-          getTodoMessage: '',
           getTodoState: ProcessState.loaded,
         ),
       );
     });
   }
 
-  FutureOr<void> _makeTodoCompleteOrPendingFunction(
-      MakeTodoCompleteOrPending event, Emitter<TodoStates> emit) {
-    List<String> list = state.idOfStateTodo.toList();
-    list.add(event.stringIdParameter.idTodo);
-    emit(state.copyWith(stateOfTodo: StateOfTodo.complete));
-    print('finish');
-    print(list);
-    GetEventList.list = list;
-  }
 }
