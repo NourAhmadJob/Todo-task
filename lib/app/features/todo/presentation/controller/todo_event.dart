@@ -1,5 +1,3 @@
-
-
 import 'package:equatable/equatable.dart';
 import 'package:todotask/app/features/todo/domain/entites.dart';
 import 'package:todotask/app/features/todo/domain/usecase/get_toto_usecase.dart';
