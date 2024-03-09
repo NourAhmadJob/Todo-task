@@ -1,8 +1,13 @@
 # todotask
 
-Hello everyOne
+Hello 
+
+I'm Nour Ahmad.
 
 I'm happy to tell you about the successfully task.
+
+I managed your time effectively to ensure that you meet deadlines without compromising quality. I avoided
+procrastination and allocate sufficient time for each stage of the task.
 
 My task was Todo application using ( Bloc stateManagement and NoSql LocalStorage ).
 
@@ -25,6 +30,12 @@ Also i didn't realtime the page when (add or update or delete the task) the diff
 refresh the page After update, add and delete the todo  (because i want do new something in task (
 Refresh page 😊😊))
 
+I made the application compatible for (android & ios) using third party libraries (ScreenUtil)
+
+I made some components to help me for doing the page fast like : (TextFormField && Text)
+
+I did simple Ui 😊 , because i prefer do the code good not Ui (in this task)
+
 I used to do this task :
 
 Clean architecture code (The role 5 by Ankle Bob ) (data,domain and presentation) - Hive for storage
@@ -43,5 +54,13 @@ Used abstraction connecting between layer and other layer
 third-party-libraries such as : (Bloc | Hive | GetIt | screenUtil | flutterToast | dartz |
 pathProvider)
 
-I used Uuid package for generate hard id for every new todo 
+I used Uuid package for generate hard id for every new todo.
 
+In closing ,Thank you all for your good work and commitment.
+Let's continue striving for excellence in all our endeavors.
+
+
+best regards
+Nour Ahmad
+
+{email : nourjob202@gmail.com , phone: +963954295352}
