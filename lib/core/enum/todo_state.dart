@@ -1,0 +1,1 @@
+enum StateOfTodo {initial , pending , complete}

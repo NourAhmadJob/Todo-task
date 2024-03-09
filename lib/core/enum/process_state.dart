@@ -1,0 +1,1 @@
+enum ProcessState {initial , loading , loaded , error }
