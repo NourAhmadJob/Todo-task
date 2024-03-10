@@ -17,7 +17,6 @@ import 'package:todotask/core/services_locator/di.dart';
 import 'package:todotask/core/toast/notification_toast.dart';
 import 'package:todotask/core/utils/app_color.dart';
 import 'package:todotask/core/utils/app_size.dart';
-import 'package:todotask/core/utils/next_back_pages.dart';
 
 class AddUpdateTodo extends StatelessWidget {
   AddUpdateTodo(
@@ -36,13 +35,12 @@ class AddUpdateTodo extends StatelessWidget {
 
   final TextEditingController titleController = TextEditingController();
   final TextEditingController desController = TextEditingController();
-  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     if (isAdd == false) {
-      titleController.text = title.toString();
-      desController.text = desc.toString();
+      titleController.text = title;
+      desController.text = desc;
     }
     return BlocProvider<TodoBloc>(
       create: (context) => sl<TodoBloc>(),
@@ -155,7 +153,7 @@ class AddUpdateTodo extends StatelessWidget {
                       }
                     },
                   ),
-                SizedBox(
+                  SizedBox(
                   height: AppSize.s20.h,
                 ),
                 if (isAdd == true)

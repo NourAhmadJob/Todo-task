@@ -1,12 +1,13 @@
 # todotask
 
-Hello 
+Hello
 
 I'm Nour Ahmad.
 
 I'm happy to tell you about the successfully task.
 
-I managed your time effectively to ensure that you meet deadlines without compromising quality. I avoided
+I managed your time effectively to ensure that you meet deadlines without compromising quality. I
+avoided
 procrastination and allocate sufficient time for each stage of the task.
 
 My task was Todo application using ( Bloc stateManagement and NoSql LocalStorage ).
@@ -21,7 +22,8 @@ get specific todo , because i want do new something in task but if you want to g
 ready please send me ) )
 
 When user update or pending the todo => i want to click on button for (pending or complete in
-AddUpdatePage)
+AddUpdatePage).Mean if user want to make the todo complete , you have to click on button the
+complete in AddUpdate page , also the same on pending task
 
 Also i made update and add todo in one page (i sent parameter in constructor to choose add or update
 page ) => i did not create 2 page (Add And Update todo 😊😊)
@@ -34,7 +36,7 @@ I made the application compatible for (android & ios) using third party librarie
 
 I made some components to help me for doing the page fast like : (TextFormField && Text)
 
-I did simple Ui 😊 , because i prefer do the code good not Ui (in this task)
+I did simple Ui 😊 , because i prefer do the code (Data) good not Ui (in this task)
 
 I used to do this task :
 
@@ -59,8 +61,7 @@ I used Uuid package for generate hard id for every new todo.
 In closing ,Thank you all for your good work and commitment.
 Let's continue striving for excellence in all our endeavors.
 
-
 best regards
 Nour Ahmad
 
-{email : nourjob202@gmail.com , phone: +963954295352}
+{ email : nourjob202@gmail.com , phone: +963954295352 }

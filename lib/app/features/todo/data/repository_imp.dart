@@ -15,7 +15,6 @@ class TodoRepositoryImp extends BaseTodoRepository {
      final result = await  baseDataSource.addTodo(todo);
      return Right(result);
     } catch(e) {
-      print(e.toString());
       return Left(Failure(message: e.toString()));
     }
   }
@@ -26,7 +25,6 @@ class TodoRepositoryImp extends BaseTodoRepository {
       final result = await  baseDataSource.deleteTodo(id);
       return Right(result);
     } catch(error) {
-      print(error.toString());
       return const Left(Failure(message: StringsManager.ERROR_HAPPEN));
     }
   }
@@ -35,10 +33,8 @@ class TodoRepositoryImp extends BaseTodoRepository {
   Future<Either<Failure, Todo>> getTodo(String id) async {
     try{
     final result = await baseDataSource.getTodo(id);
-    print('hello result $result');
       return Right(result);
     }catch(error) {
-      print(error.toString());
       return const Left(Failure(message: StringsManager.ERROR_HAPPEN));
     }
   }
@@ -49,7 +45,6 @@ class TodoRepositoryImp extends BaseTodoRepository {
     final result = await baseDataSource.getTodos();
       return Right(result);
     }catch(error){
-      print(error);
       return const Left(Failure(message: StringsManager.ERROR_HAPPEN));
     }
 

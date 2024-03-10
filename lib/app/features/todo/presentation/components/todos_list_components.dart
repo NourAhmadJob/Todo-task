@@ -83,7 +83,7 @@ class GetTodosComponents extends StatelessWidget {
                                       height: AppSize.s14.h,
                                     ),
                                     Expanded(
-                                      child:  CustomText(text: list.title , color: Colors.black,size: 16.0,maxLine: 2,),
+                                      child:  CustomText(text: list.description , color: Colors.black,size: 16.0,maxLine: 2,),
                                     ),
                                   ],
                                 ),
